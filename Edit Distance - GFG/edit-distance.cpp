@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    int solve(string s, string t,int i,int j,vector<vector<int>> &dp) {
+  int solve(string s, string t,int i,int j,vector<vector<int>> &dp) {
         if(i==s.length()) {
             return t.length()-j;
         }
@@ -33,10 +33,7 @@ class Solution {
         
     }
     int editDistance(string s, string t) {
-        int n1 = s.length();
-        int n2 = t.length();
-        vector<vector<int>> dp(n1+1,vector<int> (n2+1,-1));
-        
+        vector<vector<int>> dp(s.length()+1,vector<int>(t.length()+1,-1));
         return solve(s,t,0,0,dp);
     }
 };
